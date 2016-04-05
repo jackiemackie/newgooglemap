@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="http://cooper-union-maps-proxy.herokuapp.com/js/draw.js"></script>
+    <script>
+      $(document).ready(function(){
+        var mapOptions = {
+          zoom: 19,
+          center: new google.maps.LatLng(40.625621,-73.9604655)
+        };
+        var positions = [
+          {
+            'title':'My High School',
+            'map': new google.maps.LatLng(40.625611,-73.9603745),
+            'link':'http://www.myflatbushlife.com/',
+            'html':'<img src=https://upload.wikimedia.org/wikipedia/en/a/a4/Flatbush.png />'
+          },
+          {
+            'title':'Get Bagels for Lunch',
+            'map':new google.maps.LatLng(40.625313,-73.9620905),
+            'link':'http://www.kosherbagelhole.com/'
+          },
+          {
+            'title':'Get Pizza for Lunch',
+            'map': new google.maps.LatLng(40.624961,-73.9621975),
+            'link':'http://www.menupages.com/restaurants/bennys-brick-oven/'
+          },
+          {
+            'title':'Get Candy Instead of Lunch',
+            'map': new google.maps.LatLng(40.62535,-73.9616785),
+            'link':'https://www.ohnuts.com/?gclid=Cj0KEQjwoYi4BRDF_PHHu6rI7NMBEiQAKZ-JuBoltDQzDIVFN-6c74yjYhpgAQKDL5_W2naAhSiSlqAaAh628P8HAQ/'
+          }
+        ];
+        draw('map', mapOptions, positions);
+      });
+      // google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+        <style>
+      #map {
+        height:800px;
+        width:1200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
